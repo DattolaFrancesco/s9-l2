@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Navigazione from "./components/navbar";
 import Footer from "./components/footer";
 import Alert1 from "./components/alert";
-import Books from "./components/AllTheBooks";
+import GroupBooks from "./bookList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -16,7 +16,7 @@ function App() {
         <Alert1 />
         <Container>
           <Row className="g-3">
-            <Books />
+            <GroupBooks />
           </Row>
         </Container>
         <Footer />
