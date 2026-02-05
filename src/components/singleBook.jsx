@@ -2,6 +2,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Component } from "react";
+import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
   state = {
@@ -9,11 +10,11 @@ class SingleBook extends Component {
   };
 
   render() {
-    const { test, display } = this.props;
+    const { test } = this.props;
     const titleShort = test.title.slice(0, 13);
     return (
-      <Col xs={6} sm={6} md={4} lg={3} className={display}>
-        <Card>
+      <Col xs={6} sm={6} md={4} lg={3}>
+        <Card className={`${this.state.selected ? "come" : ""}`}>
           <div>
             <Card.Img
               onClick={() => {
@@ -37,6 +38,7 @@ class SingleBook extends Component {
             <Card.Text>{test.price}</Card.Text>
             <Button variant="primary">BUY</Button>
           </Card.Body>
+          {this.state.selected && <CommentArea bookId={test.asin} />}
         </Card>
       </Col>
     );

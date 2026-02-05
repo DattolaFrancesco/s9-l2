@@ -26,9 +26,7 @@ class GroupBooks extends Component {
         </Form>
         {libri.map((b) => {
           let search = b.title.toLowerCase();
-          if (!search.includes(this.state.title)) {
-            return <SingleBook display={"none"} test={b} key={b.asin} />;
-          } else {
+          if (search.includes(this.state.title)) {
             return <SingleBook test={b} key={b.asin} />;
           }
         })}

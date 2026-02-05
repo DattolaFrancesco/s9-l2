@@ -5,7 +5,6 @@ import libri from "../../public/books/fantasy.json";
 
 function Books() {
   return libri.map((e, i) => {
-    const test = e.title.slice(0, 13);
     return (
       <Col xs={6} sm={6} md={4} lg={3} key={i}>
         <Card>
